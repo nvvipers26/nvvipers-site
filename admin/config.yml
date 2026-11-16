@@ -109,3 +109,30 @@ collections:
           - {name: photoAlt, label: Photo description, widget: string, required: false, hint: "A few words describing the photo for screen readers, e.g. Vipers number 17 throwing a pass"}
           - {name: look, label: Background style, widget: select, options: [{label: "Snake scales", value: "scales"}, {label: "Classic (plain)", value: "classic"}], default: "scales"}
           - {name: instagram, label: Instagram handle, widget: string, hint: "Without the @"}
+
+  - name: faq
+    label: FAQ
+    editor: {preview: false}
+    files:
+      - name: faq
+        label: FAQ page
+        file: content/faq.json
+        fields:
+          - {name: intro, label: Intro line, widget: string, required: false}
+          - name: groups
+            label: Sections
+            label_singular: section
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - {name: title, label: Section title, widget: string}
+              - name: items
+                label: Questions
+                label_singular: question
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - {name: title, label: Question or topic, widget: string}
+                  - {name: body, label: Answer, widget: text, hint: "Start a line with - for a bullet, or two spaces then - for a sub-bullet. Leave a blank line between paragraphs. Web addresses become links automatically."}
+                  - {name: linkText, label: Button text, widget: string, required: false, hint: "Optional, e.g. Fill out the form"}
+                  - {name: linkUrl, label: Button link, widget: string, required: false, hint: "Optional. The button only appears when this is filled in."}

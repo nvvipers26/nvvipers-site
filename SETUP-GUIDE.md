@@ -92,7 +92,7 @@ The editor logs in with your GitHub account. This part lets GitHub and Netlify t
 
 ### D. Try it
 1. Go to **nvvipers.com/admin** and click **Login with GitHub**. Approve the request.
-2. You should see three sections: **Schedule**, **Announcement**, and **Club info**.
+2. You should see four sections: **Schedule**, **Announcement**, **Club info**, and **FAQ**.
 
 ---
 
@@ -108,6 +108,8 @@ Everything is at **nvvipers.com/admin**. After you click **Publish**, the live s
 **Post an announcement:** Announcement → turn on **Show announcement** → add a title, message, and (optionally) button text and link → **Publish**. To take it down, turn **Show announcement** off and publish. You can also set **Hide after** so it disappears on its own after a date. The banner appears above the Schedule.
 
 **Change the photo:** Club info → **Photo** → choose a new image (upload from your computer) → **Publish**. Tall, portrait-style photos fit best. Update **Photo description** too.
+
+**Update the FAQ:** FAQ → FAQ page → open a section → edit a question's answer, or use **Add question** / **Add section** → **Publish**. In an answer, start a line with `-` for a bullet. Add **Button text** and **Button link** to show a button (for example, a link to the player or coach interest form).
 
 **Switch background:** Club info → **Background style** → Snake scales or Classic (plain).
 

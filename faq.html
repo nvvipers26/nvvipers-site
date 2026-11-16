@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-look="scales">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FAQ | North Valley Vipers</title>
+<meta name="description" content="North Valley Vipers girls flag football club. Schedule, tournaments, mission and core values.">
+<meta property="og:title" content="North Valley Vipers | Girls Flag Football">
+<meta property="og:description" content="Girls Flag Football Club. Est. 2026">
+<meta property="og:image" content="https://nvvipers.com/images/logo-share.png">
+<meta property="og:url" content="https://nvvipers.com/faq.html">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div id="root"><p style="padding:2rem;text-align:center">Loading…</p></div>
+<script>
+(function(){
+"use strict";
+var root=document.getElementById('root');
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function safeUrl(u){u=String(u||'').trim();if(!u)return '';if(/^(mailto:|tel:)/i.test(u))return u;if(!/^https?:\/\//i.test(u))u='https://'+u;return u;}
+function linkify(s){return esc(s).replace(/(https?:\/\/[^\s<]+[^\s<.,;:!?)])/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');}
+function rich(text){
+  var out='',para=[],depth=0;
+  function flushP(){if(para.length){out+='<p>'+linkify(para.join(' '))+'</p>';para=[];}}
+  function closeLists(n){while(depth>n){out+='</li></ul>';depth--;}}
+  String(text||'').replace(/\r/g,'').split('\n').forEach(function(l){
+    var m=l.match(/^(\s*)[-•]\s+(.*)$/);
+    if(m){
+      flushP();var lvl=m[1].length>=2?2:1;
+      if(lvl>depth){while(depth<lvl){out+='<ul><li>';depth++;}out+=linkify(m[2]);}
+      else{closeLists(lvl);out+='</li><li>'+linkify(m[2]);}
+    }else if(!l.trim()){closeLists(0);flushP();}
+    else{closeLists(0);para.push(l.trim());}
+  });
+  closeLists(0);flushP();return out;
+}
+function faqBody(faq,ig){
+  var groups=(faq&&Array.isArray(faq.groups))?faq.groups:[];
+  return (groups.length?groups.map(function(g){
+    var items=Array.isArray(g.items)?g.items:[];
+    return '<section class="faq-group"><h2>'+esc(g.title)+'</h2>'+items.map(function(it){
+      var u=safeUrl(it.linkUrl);
+      return '<details class="faq-item"><summary>'+esc(it.title)+'</summary><div class="faq-body">'+rich(it.body)+
+        (u?'<p><a class="btn" href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(it.linkText||'Open link')+'</a></p>':'')+'</div></details>';
+    }).join('')+'</section>';
+  }).join(''):'<div class="empty"><strong>FAQ coming soon</strong>Check back soon.</div>')+
+  '<div class="faq-cta"><div><h2>Still have questions?</h2><p>Send us a message on Instagram and we’ll get back to you.</p></div><a class="btn" href="https://instagram.com/'+esc(ig)+'" target="_blank" rel="noopener">Message @'+esc(ig)+'</a></div>';
+}
+
+function render(club,faq){
+  var ig=club.instagram||'nv_vipers';
+  document.documentElement.setAttribute('data-look',club.look==='classic'?'classic':'scales');
+  var igSvg='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
+  root.innerHTML='<header class="top"><div class="wrap"><a class="brand" href="/"><img src="/images/logo.webp" alt="">Vipers</a><nav aria-label="Main"><a href="/#schedule">Schedule</a><a href="/#about">About</a><a href="/faq.html" aria-current="page">FAQ</a><a class="ig" href="https://instagram.com/'+esc(ig)+'" target="_blank" rel="noopener" aria-label="Instagram @'+esc(ig)+'" title="@'+esc(ig)+'">'+igSvg+'</a></nav></div></header>'+
+  '<main><div class="hero-wrap page-hero"><section class="hero"><div class="wrap"><h1>FAQ</h1><p class="tagline">'+esc(faq.intro||'')+'</p></div></section></div>'+
+  '<section class="block"><div class="wrap faq-wrap">'+faqBody(faq,ig)+'</div></section></main>'+
+  '<footer><div class="wrap"><span>© '+new Date().getFullYear()+' North Valley Vipers Girls Flag Football</span><a href="https://instagram.com/'+esc(ig)+'" target="_blank" rel="noopener">@'+esc(ig)+'</a></div></footer>';
+}
+function load(path){return fetch(path,{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(path);return r.json();});}
+Promise.all([load('/content/club.json').catch(function(){return {};}),load('/content/faq.json').catch(function(){return {};})])
+  .then(function(r){render(r[0]||{},r[1]||{});});
+})();
+</script>
+</body>
+</html>

@@ -139,7 +139,7 @@ function render(){
   var igSvg='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
 
   root.innerHTML=
-  '<header class="top"><div class="wrap"><a class="brand" href="#top"><img src="'+LOGO+'" alt="">Vipers</a><nav aria-label="Main"><a href="#schedule">Schedule</a><a href="#about">About</a><a class="ig" href="https://instagram.com/'+esc(ig)+'" target="_blank" rel="noopener" aria-label="Instagram @'+esc(ig)+'" title="@'+esc(ig)+'">'+igSvg+'</a></nav></div></header>'+
+  '<header class="top"><div class="wrap"><a class="brand" href="#top"><img src="'+LOGO+'" alt="">Vipers</a><nav aria-label="Main"><a href="#schedule">Schedule</a><a href="#about">About</a><a href="/faq.html">FAQ</a><a class="ig" href="https://instagram.com/'+esc(ig)+'" target="_blank" rel="noopener" aria-label="Instagram @'+esc(ig)+'" title="@'+esc(ig)+'">'+igSvg+'</a></nav></div></header>'+
   '<main id="top"><div class="hero-wrap"><section class="hero"><div class="wrap"><img class="hero-logo" src="'+LOGO+'" alt="North Valley Vipers logo: an orange viper head beneath the team name"><div class="hero-text"><h1>North Valley Vipers</h1><p class="tagline">'+esc(c.tagline||'Girls flag football club')+'</p>'+nextCard(up[0],ig)+'</div></div></section></div>'+
   announcementHtml()+
   '<section class="block" id="schedule"><div class="wrap"><div class="sec-head"><div><h2>Schedule</h2><p>Games and tournaments. Tap a location for directions.</p></div></div>'+schedule+pastHtml+'</div></section>'+
