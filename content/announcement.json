@@ -1,8 +1,8 @@
 {
-  "show": false,
-  "title": "",
-  "message": "",
+  "show": true,
+  "title": "Interest List Now Open",
+  "message": "See the FAQs and if the club is the right fit for you, join the interest list for 12U, 14U and HS teams under the Get Involved section.",
   "linkText": "",
   "linkUrl": "",
-  "hideAfter": ""
+  "hideAfter": "2026-11-24"
 }
