@@ -1,0 +1,31 @@
+{
+  "tagline": "Girls Flag Football Club. Est. 2026",
+  "about": "The girls flag football club was started in the spring of 2026 by nine girls seeking more competition for themselves as they continue to grow and develop. As such, we will live by the mission and core values of which they created.  We are primarily focused on developing girls that reside in the attendance zone of Sandra Day O'Connor and Boulder Creek High Schools.  We are North Valley strong!",
+  "mission": "We are a team built on faith, family, support, trust and growth. We encourage one another, believe in God’s purpose for us, trust the work we put in, and push each other to become stronger players, teammates and people in our community.",
+  "values": [
+    {
+      "name": "Faith",
+      "text": "Trusting in God’s strength and believing all things are possible through Him."
+    },
+    {
+      "name": "Family",
+      "text": "Standing by one another on and off the field through every challenge and success."
+    },
+    {
+      "name": "Support",
+      "text": "Encouraging, uplifting, and pushing each other to be our best every day."
+    },
+    {
+      "name": "Trust",
+      "text": "Having confidence in each other, the process, and the work we put in on and off the field."
+    },
+    {
+      "name": "Growth",
+      "text": "Committing to becoming stronger athletes, teammates, leaders, and members of our community."
+    }
+  ],
+  "photo": "/images/uploads/vipers-17.webp",
+  "photoAlt": "Vipers number 17 winding up to throw a pass",
+  "look": "scales",
+  "instagram": "nv_vipers"
+}

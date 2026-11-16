@@ -1,0 +1,111 @@
+# North Valley Vipers site editor (Decap CMS)
+# ONE-TIME SETUP: replace YOUR-GITHUB-USERNAME below with your GitHub username.
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/nvvipers-site
+  branch: main
+  commit_messages:
+    update: "Update {{collection}}"
+
+site_url: https://nvvipers.com
+display_url: https://nvvipers.com
+logo_url: /images/logo.webp
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: schedule
+    label: Schedule
+    editor: {preview: false}
+    files:
+      - name: schedule
+        label: Games and tournaments
+        file: content/schedule.json
+        fields:
+          - name: events
+            label: Events
+            label_singular: event
+            widget: list
+            typeKey: type
+            add_to_top: true
+            hint: "Order doesn't matter. The site sorts by date and moves past events into Past events and results."
+            types:
+              - name: game
+                label: Game
+                widget: object
+                summary: "{{fields.date}} | {{fields.team}} vs. {{fields.title}}"
+                fields:
+                  - {name: team, label: Team name, widget: string, required: false, hint: "e.g. 13U Falcons"}
+                  - {name: title, label: Opponent, widget: string, required: false, hint: "Just the name, e.g. Lady Hawks. Leave blank if not known yet."}
+                  - {name: gameType, label: Game type, widget: select, options: ["Regular Season", "Playoff", "Championship"], default: "Regular Season"}
+                  - {name: date, label: Date, widget: datetime, format: "YYYY-MM-DD", date_format: "MMM D, YYYY", time_format: false, picker_utc: true}
+                  - {name: time, label: Start time, widget: string, required: false, hint: "e.g. 5:05 PM", pattern: ['^$|^(1[0-2]|0?[1-9]):[0-5][0-9] ?([AaPp][Mm])$', "Use a time like 5:05 PM"]}
+                  - {name: location, label: Location, widget: string, required: false, hint: "Field or venue name"}
+                  - {name: address, label: Address, widget: string, required: false, hint: "Optional. Used for the Directions link."}
+                  - {name: notes, label: Notes, widget: string, required: false}
+                  - {name: result, label: Final score, widget: string, required: false, hint: "Add after the game, e.g. W 28–14"}
+              - name: tournament
+                label: Tournament
+                widget: object
+                summary: "{{fields.date}} | {{fields.level}} {{fields.title}}"
+                fields:
+                  - {name: title, label: Tournament name, widget: string}
+                  - {name: level, label: Team level, widget: select, options: ["12U", "14U", "HS"]}
+                  - {name: date, label: Date, widget: datetime, format: "YYYY-MM-DD", date_format: "MMM D, YYYY", time_format: false, picker_utc: true}
+                  - {name: location, label: Location, widget: string, required: false, hint: "Field or venue name"}
+                  - {name: address, label: Address, widget: string, required: false, hint: "Optional. Used for the Directions link."}
+                  - {name: tbd, label: Game schedule TBD, widget: boolean, default: false, hint: "Turn on until the tournament releases its game schedule. Games below are hidden on the site while this is on."}
+                  - name: games
+                    label: Games
+                    label_singular: game
+                    widget: list
+                    required: false
+                    summary: "{{fields.time}} vs. {{fields.opponent}} ({{fields.type}})"
+                    fields:
+                      - {name: time, label: Time, widget: string, required: false, hint: "e.g. 9:00 AM", pattern: ['^$|^(1[0-2]|0?[1-9]):[0-5][0-9] ?([AaPp][Mm])$', "Use a time like 9:00 AM"]}
+                      - {name: opponent, label: Opponent, widget: string, required: false}
+                      - {name: field, label: Field, widget: string, required: false, hint: "e.g. Field 3"}
+                      - {name: score, label: Score, widget: string, required: false, hint: "e.g. W 21–14"}
+                      - {name: type, label: Game type, widget: select, options: ["Pool Play", "Playoff", "Championship"], default: "Pool Play"}
+                  - {name: notes, label: Notes, widget: string, required: false}
+                  - {name: result, label: Final result, widget: string, required: false, hint: "Add after the tournament, e.g. 2nd place"}
+
+  - name: announcement
+    label: Announcement
+    editor: {preview: false}
+    files:
+      - name: announcement
+        label: Announcement banner
+        file: content/announcement.json
+        fields:
+          - {name: show, label: Show announcement, widget: boolean, default: false, hint: "Turn off to hide the banner. Your text is kept for next time."}
+          - {name: title, label: Title, widget: string, required: false}
+          - {name: message, label: Message, widget: text, required: false}
+          - {name: linkText, label: Button text, widget: string, required: false, hint: "Optional, e.g. Register now"}
+          - {name: linkUrl, label: Button link, widget: string, required: false, hint: "Optional web address. The button only appears when this is filled in."}
+          - {name: hideAfter, label: Hide after, widget: datetime, format: "YYYY-MM-DD", date_format: "MMM D, YYYY", time_format: false, picker_utc: true, required: false, hint: "Optional. The banner disappears on its own after this date."}
+
+  - name: club
+    label: Club info
+    editor: {preview: false}
+    files:
+      - name: club
+        label: Club info and photo
+        file: content/club.json
+        fields:
+          - {name: tagline, label: Tagline, widget: string}
+          - {name: about, label: About the club, widget: text}
+          - {name: mission, label: Mission, widget: text}
+          - name: values
+            label: Core values
+            label_singular: value
+            widget: list
+            summary: "{{fields.name}}"
+            hint: "Faith, Family, Support, Trust and Growth have their own icons."
+            fields:
+              - {name: name, label: Value, widget: string}
+              - {name: text, label: Description, widget: text}
+          - {name: photo, label: Photo, widget: image, required: false, hint: "Shown next to About and Our mission. A tall (portrait) photo looks best."}
+          - {name: photoAlt, label: Photo description, widget: string, required: false, hint: "A few words describing the photo for screen readers, e.g. Vipers number 17 throwing a pass"}
+          - {name: look, label: Background style, widget: select, options: [{label: "Snake scales", value: "scales"}, {label: "Classic (plain)", value: "classic"}], default: "scales"}
+          - {name: instagram, label: Instagram handle, widget: string, hint: "Without the @"}

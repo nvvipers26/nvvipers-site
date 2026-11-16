@@ -1,0 +1,27 @@
+{
+  "events": [
+    {
+      "type": "tournament",
+      "title": "Desert Blitz",
+      "date": "2026-12-12",
+      "location": "Pioneer Community Park",
+      "notes": "",
+      "result": "",
+      "level": "14U",
+      "games": [],
+      "tbd": true
+    },
+    {
+      "type": "game",
+      "title": "TBD",
+      "date": "2026-11-20",
+      "location": "Anthem Community Park",
+      "address": "",
+      "notes": "",
+      "result": "",
+      "time": "5:05 PM",
+      "gameType": "Playoff",
+      "team": "13U Falcons"
+    }
+  ]
+}

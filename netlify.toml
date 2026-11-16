@@ -1,0 +1,8 @@
+# No build step: the site is plain files.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "no-cache"
