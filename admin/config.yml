@@ -2,7 +2,7 @@
 # ONE-TIME SETUP: replace YOUR-GITHUB-USERNAME below with your GitHub username.
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/nvvipers-site
+  repo: brian.bolitho@yahoo.com/nvvipers-site
   branch: main
   commit_messages:
     update: "Update {{collection}}"
