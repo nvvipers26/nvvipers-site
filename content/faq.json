@@ -12,7 +12,7 @@
         },
         {
           "title": "Club season",
-          "body": "The club season will run from December 1, 2026 through August 7, 2027.",
+          "body": "The club season will run from December through August of each year.",
           "linkText": "",
           "linkUrl": ""
         }
@@ -117,8 +117,8 @@
         {
           "title": "Player interest form",
           "body": "Please fill out the form so we can put you on our interest list. Filling out the interest list does not guarantee a roster spot. The more coaches we have, the more opportunity there may be.",
-          "linkText": "",
-          "linkUrl": ""
+          "linkText": "Player Interest Form",
+          "linkUrl": "https://docs.google.com/forms/d/e/1FAIpQLScgUVoIWR1redmpaVd9UKachHweANWqmVrAr_p3OmjI8Y8f1Q/viewform?usp=dialog"
         },
         {
           "title": "Coach interest form",
