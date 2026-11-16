@@ -54,7 +54,7 @@
       ]
     },
     {
-      "title": "Teams and schedule",
+      "title": "Teams and Schedule",
       "items": [
         {
           "title": "Roster size",
@@ -112,19 +112,19 @@
       ]
     },
     {
-      "title": "Get involved",
+      "title": "Get Involved",
       "items": [
         {
-          "title": "Player interest form",
+          "title": "Player Interest Form",
           "body": "Please fill out the form so we can put you on our interest list. Filling out the interest list does not guarantee a roster spot. The more coaches we have, the more opportunity there may be.",
           "linkText": "Player Interest Form",
           "linkUrl": "https://docs.google.com/forms/d/e/1FAIpQLScgUVoIWR1redmpaVd9UKachHweANWqmVrAr_p3OmjI8Y8f1Q/viewform?usp=dialog"
         },
         {
-          "title": "Coach interest form",
+          "title": "Coach Interest Form",
           "body": "Coaches will be required to complete a series of educational programs and provide proof of completion, as well as obtain an IVP Fingerprint Clearance Card. While you will incur some out-of-pocket expense to complete the courses and obtain the card, this is necessary to ensure we have the right individuals around these girls.\n\nRequirements to coach:\n- Obtain an IVP Fingerprint Clearance Card (approx. $70)\n- Complete 5 online classes at https://nfhslearn.com/\n  - Bullying, Hazing and Inappropriate Behaviors (free)\n  - Concussion in Sports – Arizona (free)\n  - First Aid, Health and Safety ($35)\n  - Fundamentals of Coaching – Arizona ($35)\n  - CPR & AED Training ($10)\n\nIf this is acceptable to you, please fill out the coach interest form.",
-          "linkText": "",
-          "linkUrl": ""
+          "linkText": "Coach Interest Form",
+          "linkUrl": "https://docs.google.com/forms/d/e/1FAIpQLSd10WR9D4z55AIr55GMP-kscxSAqWRUPzEAE3OUVr9sTmk2qA/viewform?usp=dialog"
         }
       ]
     }
