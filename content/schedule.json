@@ -3,14 +3,23 @@
     {
       "notes": "",
       "gameType": "Playoff",
-      "time": "",
+      "time": "06:15 PM",
       "date": "2026-11-20",
       "address": "",
-      "location": "Anthem Community Park",
-      "title": "TBD",
+      "location": "Anthem Community Park, Field 4",
+      "title": "Chiefs or Patriots",
       "type": "game",
       "result": "",
       "team": "13U Falcons"
+    },
+    {
+      "type": "game",
+      "gameType": "Championship",
+      "team": "13U Falcons",
+      "title": "TBD",
+      "date": "2026-11-21",
+      "time": "10:00 AM",
+      "location": "Anthem Community Park, Field 4"
     },
     {
       "games": [],
